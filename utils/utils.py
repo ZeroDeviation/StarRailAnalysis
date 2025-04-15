@@ -1,16 +1,15 @@
 import numpy as np
 import pandas as pd
 
-url = "Your repo to MoCStats's raw csvs"
 
 # mostly play alone, rarely see with other core dps
-core_dps = ['Acheron', 'Jing Yuan', 'Firefly', 'Feixiao', 'Rappa', 'Boothill', 'Seele', 'Jingliu', 'Dan Heng • Imbibitor Lunae',    
-'Argenti', 'Dr. Ratio', 'The Herta', 'Aglaea', 'Yanqing']
+core_dps = ['Castorice', 'Acheron', 'Jing Yuan', 'Firefly', 'Feixiao', 'Rappa', 'Boothill', 'Seele', 'Jingliu', 'Dan Heng • Imbibitor Lunae',    
+'Dr. Ratio', 'The Herta', 'Aglaea', 'Yanqing']
 
 # dps that can be play with core dps or solo
-flexible_dps = ['Blade', 'Clara', 'Welt', 'Himeko', 'Jade', 'Yunli', 'Kafka']
+flexible_dps = ['Mydei', 'Blade', 'Clara', 'Welt', 'Himeko', 'Jade', 'Yunli', 'Kafka', 'Argenti', 'Anaxa']
 
-sustains = ['Bailu', 'Natasha', 'Ice March 7th', 'Fire Trailblazer', 'Gepard', 'Luocha', 'Lynx', 'Fu Xuan', 'Huohuo', 'Aventurine', 'Lingsha', 'Gallagher']
+sustains = ['Bailu', 'Natasha', 'Ice March 7th', 'Fire Trailblazer', 'Gepard', 'Luocha', 'Lynx', 'Fu Xuan', 'Huohuo', 'Aventurine', 'Lingsha', 'Gallagher', 'Hyacine']
 
 mandatory_dps = [('Jing Yuan', 'Sunday'), ('Rappa', 'Fugue'), ('Boothill', 'Fugue'), ('Dr. Ratio', 'Robin'), ('Feixiao', 'Robin'), 
                  ('Firefly', 'Ruan Mei'), ('Acheron', 'Jiaoqiu'), ('Kafka', 'Black Swan'), ('Firefly', 'Fugue'), ('Aglaea', 'Sunday')]
@@ -31,7 +30,7 @@ def get_specific_team(x):
 
 def read_and_add_csv(a, replace_substring):
     temp = pd.read_csv(a)
-    temp['version'] = a.split('\\')[-1].replace(replace_substring, '')
+    temp['version'] = a.split('/')[-1].replace(replace_substring, '')
     return temp
 
 def num_there(s):
